@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+    hello1:
+        build: . 
+        image: hello:v0.2
+        environment:
+            ENVIRONMENT_VARIABLE: value
+        ports:
+            - "5001:80"
+        networks:
+            - lab3-network
+        volumes:
+            - hello1-volume:/tmp
+
+    hello2:
+        build: . 
+        image: hello:v0.2
+        environment:
+            ENVIRONMENT_VARIABLE: value
+        ports:
+            - "5002:80"
+        networks:
+            - lab3-network
+        volumes:
+            - hello2-volume:/tmp
+
+volumes:
+    hello1-volume:
+    hello2-volume:
+
+networks:
+    lab3-network:
