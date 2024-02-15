@@ -11,8 +11,7 @@ services:
         networks:
             - lab3-network
         volumes:
-            - hello1-volume:/tmp
-            
+            - hello1-volume:/tmp 
 
     hello2:
         build: . 
